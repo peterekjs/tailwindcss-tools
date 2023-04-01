@@ -1,0 +1,69 @@
+{
+  "name": "@peterek/tailwindcss-tools",
+  "version": "0.0.0",
+  "description": "Tools to help building Tailwind CSS plugins library",
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "css",
+    "tailwind",
+    "tailwindcss",
+    "tool",
+    "tools",
+    "plugin",
+    "plugins"
+  ],
+  "author": {
+    "name": "Jiri Peterek",
+    "email": "jiri@peterek.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterekjs/tailwindcss-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/peterekjs/tailwindcss-tools/issues"
+  },
+  "homepage": "https://github.com/peterekjs/tailwindcss-tools#readme",
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./dist/tailwindcss-tools.cjs",
+  "module": "./dist/tailwindcss-tools.js",
+  "exports": {
+    ".": {
+      "import": "./dist/tailwindcss-tools.js",
+      "require": "./dist/tailwindcss-tools.cjs"
+    },
+    "./src/*": "./src/*"
+  },
+  "types": "./dist/index.d.ts",
+  "typescript": {
+    "definition": "./dist/index.d.ts"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@peterek/helpers": "^1.0.2",
+    "ts-essentials": "^9.3.1"
+  },
+  "peerDependencies": {
+    "ramda": "^0.28.0",
+    "tailwindcss": "^3.3.1"
+  },
+  "devDependencies": {
+    "@peterek/rollup-externals": "^1.0.0",
+    "@types/node": "^18.15.11",
+    "@types/ramda": "^0.28.23",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1",
+    "vite-plugin-dts": "^2.1.0"
+  }
+}
