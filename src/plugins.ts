@@ -1,12 +1,10 @@
-import { isFilledArray } from '@peterek/helpers'
-import type { DeepNonNullable } from 'ts-essentials'
+import { isArray } from '@peterek/helpers'
 import { assertTailwindPluginsCollection } from './identity'
-import type { TailwindPlugin } from './types'
+import type { PluginContent, TailwindPlugin } from './types'
 
-type Plugin = DeepNonNullable<TailwindPlugin>
-type PluginConfig = DeepNonNullable<Plugin['config']>
-type PluginContent = DeepNonNullable<PluginConfig['content']>
-type PluginSafelist = DeepNonNullable<PluginConfig['safelist']>
+type Plugin = TailwindPlugin
+type PluginConfig = Plugin['config'] & {}
+type PluginSafelist = PluginConfig['safelist'] & {}
 
 export function useTailwindPlugins(input: TailwindPlugin[]) {
   assertTailwindPluginsCollection(input)
@@ -18,15 +16,15 @@ export function useTailwindPlugins(input: TailwindPlugin[]) {
   input.forEach(plugin => {
     plugins.push(plugin)
 
-    const _content = plugin.config?.content
-    if (isFilledArray(_content)) {
+    const _content: PluginContent | undefined = plugin.config?.content
+    if (isArray(_content)) {
       _content.forEach(i => {
         if (i) content.push(i)
       })
     }
 
     const _safelist = plugin.config?.safelist
-    if (isFilledArray(_safelist)) {
+    if (isArray(_safelist)) {
       _safelist.forEach(i => {
         if (i) safelist.push(i)
       })

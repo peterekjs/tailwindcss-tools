@@ -1,5 +1,4 @@
 import { assertArray, assertFunction, assertObject, isFunction, isObject } from '@peterek/helpers'
-import { assert } from 'ts-essentials'
 import type { TailwindPlugin } from './types'
 
 export function assertTailwindPlugin(value: unknown): asserts value is TailwindPlugin {
@@ -16,5 +15,7 @@ export function isTailwindPlugin(value: unknown): value is TailwindPlugin {
 
 export function assertTailwindPluginsCollection(value: unknown): asserts value is TailwindPlugin[] {
   assertArray(value)
-  assert(value.every(isTailwindPlugin), '[tailwindcss-tools] Some items of the plugins collection are not valid tailwind plugins')
+  if (!value.every(isTailwindPlugin)) {
+    throw new TypeError('[tailwindcss-tools] Some items of the plugins collection are not valid tailwind plugins')
+  }
 }
