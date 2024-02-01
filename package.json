@@ -1,6 +1,6 @@
 {
   "name": "@peterek/tailwindcss-tools",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Tools to help building Tailwind CSS plugins library",
   "license": "MIT",
   "keywords": [
