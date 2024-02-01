@@ -26,18 +26,20 @@
     "url": "https://github.com/peterekjs/tailwindcss-tools/issues"
   },
   "homepage": "https://github.com/peterekjs/tailwindcss-tools#readme",
-  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "type": "module",
+  "sideEffects": false,
   "files": [
     "dist",
     "src"
   ],
-  "main": "./dist/tailwindcss-tools.cjs",
-  "module": "./dist/tailwindcss-tools.js",
   "exports": {
     ".": {
-      "import": "./dist/tailwindcss-tools.js",
-      "require": "./dist/tailwindcss-tools.cjs"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/tailwindcss-tools.cjs",
+      "default": "./dist/tailwindcss-tools.js"
     },
     "./src/*": "./src/*"
   },
@@ -51,19 +53,18 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@peterek/helpers": "^1.0.2",
-    "ts-essentials": "^9.3.1"
+    "@peterek/helpers": "2.0.0",
+    "ts-essentials": "^9.4.1"
   },
   "peerDependencies": {
-    "ramda": "^0.28.0",
-    "tailwindcss": "^3.3.1"
+    "ramda": "^0.29.1",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "@peterek/rollup-externals": "^1.0.0",
-    "@types/node": "^18.15.11",
-    "@types/ramda": "^0.28.23",
-    "typescript": "^5.0.3",
-    "vite": "^4.2.1",
-    "vite-plugin-dts": "^2.1.0"
+    "@types/node": "^20.11.15",
+    "@types/ramda": "^0.29.10",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vite-plugin-dts": "^3.7.2"
   }
 }
