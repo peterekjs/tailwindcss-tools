@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/peterekjs/tailwindcss-tools#readme",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "type": "module",
   "sideEffects": false,
@@ -53,17 +53,19 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@peterek/helpers": "^2.1.0"
+    "@peterek/helpers": "^2.2.0"
   },
   "peerDependencies": {
-    "ramda": "^0.29.1",
-    "tailwindcss": "^3.4.1"
+    "ramda": ">=0.29.0",
+    "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.15",
-    "@types/ramda": "^0.29.10",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.12",
-    "vite-plugin-dts": "^3.7.2"
+    "@types/node": "^22.10.5",
+    "@types/ramda": "^0.30.2",
+    "ramda": "^0.30.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.4.0"
   }
 }
